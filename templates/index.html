@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travis Strategies</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <style>
+        /* Added styles for new elements */
+        .nav-cta {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 14px;
+            display: inline-block;
+        }
+        .nav-cta:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        
+        .mobile-menu .nav-cta-mobile {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin: 10px 20px;
+            text-align: center;
+        }
+        .mobile-menu .nav-cta-mobile:hover {
+             background-color: #0056b3;
+        }
+
+        .form-section {
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        .form-section .container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .form-section h2 {
+            /* Assuming h2 styles are in style.css, but just in case */
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        .form-section p {
+            /* Assuming p styles are in style.css, but just in case */
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Fallback for .cta-button if not in style.css */
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 14px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        /* Fallback for logo if style.css doesn't define it */
+        .logo img {
+            max-height: 50px;
+            width: auto;
+            /* Placeholder in case image fails to load */
+            onerror: "this.onerror=null;this.src='https://placehold.co/150x50/000000/FFFFFF?text=Logo';"
+        }
+
+        /* Fallback for video placeholders */
+        .hero-video {
+            width: 100%;
+            height: auto;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo">
+                    <!-- Added placeholder image -->
+                    <img src="{{ url_for('static', filename='logo.png') }}" alt="Travis Strategies Logo" onerror="this.onerror=null;this.src='https://placehold.co/150x50/000000/FFFFFF?text=Travis+Strategies';">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#who-we-are">Who we are <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#who-we-serve">What we do <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#">Our Thinking <i class="fas fa-chevron-down"></i></a></li>
+                    <li><a href="#">Careers <i class="fas fa-chevron-down"></i></a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <!-- Added Submit Form Button -->
+                <a 
+                    href="https://travis-strategies-llc.hubflo.com/forms/621cef67-bd9d-4700-a2f1-fa3fc7d84165" 
+                    target="_blank" 
+                    class="nav-cta"
+                >
+                    Submit a Form
+                </a>
+                <button class="hamburger" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#who-we-are">Who we are</a></li>
+                <li><a href="#who-we-serve">What we do</a></li>
+                <li><a href="#">Our Thinking</a></li>
+                <li><a href="#">Careers</a></li>
+                <!-- Added Submit Form Link for Mobile -->
+                <li>
+                    <a 
+                        href="https://travis-strategies-llc.hubflo.com/forms/621cef67-bd9d-4700-a2f1-fa3fc7d84165" 
+                        target="_blank" 
+                        class="nav-cta-mobile"
+                    >
+                        Submit a Form
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Simplifying Community Engagement Reporting</h1>
+                    <p>
+                        We deliver a secure, fast-to-implement, and compliant Community Engagement Reporting (CER) solution designed to help State Medicaid Agencies meet the OBBB requirements accurately, efficiently, and compassionately.
+                    </p>
+                    <a href="#" class="cta-button">Learn How It Works</a>
+                </div>
+                
+                <div class="hero-image">
+                    <!-- Added placeholder videos as src is local -->
+                    <video src="{{ url_for('static', filename='hero_sec.mp4') }}" autoplay loop muted playsinline class="hero-video video-1"></video>
+                    <video src="{{ url_for('static', filename='hero_sec.mp4') }}" autoplay loop muted playsinline class="hero-video video-2"></video>
+                </div>
+            </div>
+        </section>
+
+        <section id="who-we-are" class="about-section">
+            <div class="container">
+                <div class="logo-container">
+                    <!-- Added placeholder image -->
+                    <img src="{{ url_for('static', filename='logo.png') }}" alt="Travis Strategies Logo" class="about-logo" onerror="this.onerror=null;this.src='https://placehold.co/150x50/000000/FFFFFF?text=Travis+Strategies';">
+                </div>
+                <div class="about-content">
+                    <h2>Who we are</h2>
+                    <h3 class="company-name">Travis Strategies, LLC</h3>
+                    <p class="certification">
+                        is a BEP-Certified Business Owned by Persons with Disabilities (PBE)
+                    </p>
+                    <p class="services">
+                        Project Management Services for Managed Care Organizations, Non-IT Staff Augmentation, 
+                        Capital Development Project Management and Change Management Services
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Added New Form Section -->
+        <section id="submit-form" class="form-section">
+            <div class="container">
+                <h2>Submit Your Request</h2>
+                <p>Click below to open our secure form in a new tab.</p>
+                <a 
+                    href="https://travis-strategies-llc.hubflo.com/forms/621cef67-bd9d-4700-a2f1-fa3fc7d84165" 
+                    target="_blank" 
+                    class="cta-button"
+                >
+                    Open Form
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
